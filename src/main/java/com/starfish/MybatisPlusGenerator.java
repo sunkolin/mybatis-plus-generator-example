@@ -20,27 +20,37 @@ import java.util.Collections;
  */
 public class MybatisPlusGenerator {
 
-    // ========== 核心配置参数（根据自己项目修改） ==========
+    // 数据源配置
     private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/starfish?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&useSSL=false";
+
     private static final String DB_USERNAME = "root";
+
     private static final String DB_PASSWORD = "123456789";
-    private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver"; // MySQL 8.x 驱动
-    // private static final String DB_DRIVER = "com.mysql.jdbc.Driver"; // MySQL 5.x 驱动
+
+    // MySQL 8.x 驱动
+    private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+
+    // MySQL 5.x 驱动
+    // private static final String DB_DRIVER = "com.mysql.jdbc.Driver";
 
     // 生成代码的输出目录（默认是项目根目录下的 src/main/java，可自定义）
     private static final String OUTPUT_DIR = System.getProperty("user.dir") + "/src/main/java";
+
     // Mapper.xml 文件输出目录（src/main/resources/mapper）
     private static final String MAPPER_XML_OUTPUT_DIR = System.getProperty("user.dir") + "/src/main/resources/mapper";
 
     // 父包名（根据自己项目的包结构修改）
     private static final String PARENT_PACKAGE = "com.starfish";
+
     // 模块名（可选，如无模块可设为 ""）
     private static final String MODULE_NAME = "";
+
     // 作者（生成代码的注释中显示）
     private static final String AUTHOR = "sunkolin";
 
     // 需要生成代码的表名（支持多个表，用逗号分隔；生成所有表填 "*"）
     private static final String[] TABLE_NAMES = {"t_user"};
+
     // 表前缀（生成 Entity 时会去掉前缀，如 "sys_user" -> Entity 名为 "User"）
     private static final String TABLE_PREFIX = "t_";
 
