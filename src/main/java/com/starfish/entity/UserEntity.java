@@ -11,7 +11,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 @ToString
 @TableName("t_user")
 @Accessors(chain = true)
-public class User implements Serializable {
+public class UserEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -82,7 +82,7 @@ public class User implements Serializable {
      * 生日
      */
     @TableField("birthday")
-    private LocalDateTime birthday;
+    private Date birthday;
 
     /**
      * 备注
@@ -94,11 +94,11 @@ public class User implements Serializable {
      * 创建时间
      */
     @TableField(value = "create_time", fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      * 最后修改时间
      */
     @TableField("modify_time")
-    private LocalDateTime modifyTime;
+    private Date modifyTime;
 }

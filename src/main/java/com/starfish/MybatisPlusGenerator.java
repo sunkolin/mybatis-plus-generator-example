@@ -55,7 +55,8 @@ public class MybatisPlusGenerator {
                     builder.author(AUTHOR) // 作者
                             .outputDir(OUTPUT_DIR) // 代码输出目录
                             .disableOpenDir() // 生成后不打开文件夹（可选，true 为打开）
-                            .dateType(DateType.TIME_PACK) // 日期类型（java.time 包，JDK8+）
+                            .dateType(DateType.ONLY_DATE) // 日期类型（java.time 包，JDK8+）
+//                            .dateType(DateType.TIME_PACK) // 日期类型（java.time 包，JDK8+）
                             .commentDate("yyyy-MM-dd"); // 注释日期格式
                 })
                 // 4. 包配置（指定生成的类放在哪个包下）
@@ -75,6 +76,7 @@ public class MybatisPlusGenerator {
                     builder.addInclude(TABLE_NAMES) // 要生成的表名
                             .addTablePrefix(TABLE_PREFIX) // 去掉表前缀
                             .entityBuilder() // Entity 生成策略
+                            .formatFileName("%sEntity")
                             .enableLombok() // 启用 Lombok（需引入 Lombok 依赖）
                             .enableChainModel() // 启用链式调用（如 user.setId(1).setName("xxx")）
                             .enableTableFieldAnnotation() // 为字段添加 @TableField 注解

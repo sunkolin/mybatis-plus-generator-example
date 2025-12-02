@@ -1,7 +1,7 @@
 package com.starfish.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.starfish.entity.User;
+import com.starfish.entity.UserEntity;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.starfish.entity.User;
  * @author sunkolin
  * @since 2025-12-02
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<UserEntity> {
 
 }
