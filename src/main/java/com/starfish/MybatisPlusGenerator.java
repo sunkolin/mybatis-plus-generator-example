@@ -62,7 +62,7 @@ public class MybatisPlusGenerator {
         FastAutoGenerator.create(dataSource)
                 // 3. 全局配置
                 .globalConfig(builder -> {
-                    builder.author(AUTHOR) // 作者
+                    builder.author(AUTHOR) // 作者·
                             .outputDir(OUTPUT_DIR) // 代码输出目录
                             .disableOpenDir() // 生成后不打开文件夹（可选，true 为打开）
                             .dateType(DateType.ONLY_DATE) // 日期类型（java.time 包，JDK8+）
@@ -91,7 +91,10 @@ public class MybatisPlusGenerator {
                             .enableChainModel() // 启用链式调用（如 user.setId(1).setName("xxx")）
                             .enableTableFieldAnnotation() // 为字段添加 @TableField 注解
                             .addTableFills( // 自动填充配置（如创建时间、更新时间）
-                                    new Property("createTime", FieldFill.INSERT), new Property("updateTime", FieldFill.INSERT_UPDATE)).mapperBuilder() // Mapper 生成策略
+                                    new Property("createTime", FieldFill.INSERT),
+                                    new Property("updateTime", FieldFill.INSERT_UPDATE),
+                                    new Property("modifyTime", FieldFill.INSERT_UPDATE)
+                            ).mapperBuilder() // Mapper 生成策略
                             .superClass(BaseMapper.class) // 继承 BaseMapper（MP 自带）
                             .enableBaseResultMap() // 启用 BaseResultMap（XML 中生成结果映射）
                             .enableBaseColumnList() // 启用 BaseColumnList（XML 中生成查询字段列表）

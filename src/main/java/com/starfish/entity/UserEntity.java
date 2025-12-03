@@ -19,7 +19,7 @@ import java.util.Date;
  * </p>
  *
  * @author sunkolin
- * @since 2025-12-02
+ * @since 2025-12-03
  */
 @Getter
 @Setter
@@ -99,6 +99,6 @@ public class UserEntity implements Serializable {
     /**
      * 最后修改时间
      */
-    @TableField("modify_time")
+    @TableField(value = "modify_time", fill = FieldFill.INSERT_UPDATE)
     private Date modifyTime;
 }

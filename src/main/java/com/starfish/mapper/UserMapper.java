@@ -9,7 +9,7 @@ import com.starfish.entity.UserEntity;
  * </p>
  *
  * @author sunkolin
- * @since 2025-12-02
+ * @since 2025-12-03
  */
 public interface UserMapper extends BaseMapper<UserEntity> {
 
